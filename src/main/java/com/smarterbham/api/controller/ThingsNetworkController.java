@@ -50,4 +50,9 @@ public class ThingsNetworkController {
     List<AirQuality> getAirQuality() {
         return airQualityRepository.findAll();
     }
+
+    @GetMapping("/connection")
+    List<Connection> getConnections() {
+        return connectionRepository.findAll();
+    }
 }
