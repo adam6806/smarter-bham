@@ -1,4 +1,6 @@
 spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${SPRING_DATASOURCE_URL}
@@ -10,5 +12,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
 server:
   port: ${PORT:8080}
