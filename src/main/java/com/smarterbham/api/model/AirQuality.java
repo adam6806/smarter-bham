@@ -1,5 +1,6 @@
 package com.smarterbham.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.smarterbham.api.dto.ThingsNetworkPayload;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,7 @@ public class AirQuality implements Serializable {
     private Integer relativeHumidity;
     private Integer uv;
     private Integer voc;
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
     private Connection connection;
