@@ -48,7 +48,7 @@ public class ThingsNetworkController {
 
     @GetMapping("/airQuality")
     List<AirQuality> getAirQuality() {
-        return airQualityRepository.findAll();
+        return airQualityRepository.findAllByOrderByReceivedAtDesc();
     }
 
     @GetMapping("/connection")
