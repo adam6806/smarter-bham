@@ -1,12 +1,14 @@
 package com.smarterbham.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.smarterbham.api.dto.ThingsNetworkPayload;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.time.Instant;
 
@@ -35,14 +37,11 @@ public class AirQuality implements Serializable {
     private Integer relativeHumidity;
     private Integer uv;
     private Integer voc;
-    @JsonIgnore
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
-    private Connection connection;
+    private Long connectionId;
 
     public AirQuality(ThingsNetworkPayload thingsNetworkPayload, Connection connection, Device device) {
 
-        this.connection = connection;
+        connectionId = connection.getId();
         receivedAt = thingsNetworkPayload.getReceivedAt();
         latitude = device.getLatitude();
         longitude = device.getLongitude();
