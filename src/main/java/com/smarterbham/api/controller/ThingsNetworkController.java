@@ -48,11 +48,11 @@ public class ThingsNetworkController {
 
     @GetMapping("/airQuality")
     List<AirQuality> getAirQuality() {
-        return airQualityRepository.findAllByOrderByReceivedAtDesc();
+        return airQualityRepository.findTop50ByOrderByReceivedAtDesc();
     }
 
     @GetMapping("/connection")
     List<Connection> getConnections() {
-        return connectionRepository.findAll();
+        return connectionRepository.findTop50ByOrderByReceivedAtDesc();
     }
 }

@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface AirQualityRepository extends JpaRepository<AirQuality, Long> {
 
-    List<AirQuality> findAllByOrderByReceivedAtDesc();
+    List<AirQuality> findTop50ByOrderByReceivedAtDesc();
 }
