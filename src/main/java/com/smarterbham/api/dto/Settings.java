@@ -18,7 +18,6 @@ public class Settings implements Serializable {
     public String codingRate;
     public String frequency;
     private final static long serialVersionUID = 6910320660131043171L;
-    public Integer timestamp;
     public String time;
 
 }
