@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @RestController
 public class ThingsNetworkController {
@@ -31,19 +33,24 @@ public class ThingsNetworkController {
     @PostMapping("/thingsNetworkPayload")
     void newThingsNetworkPayload(@RequestBody ThingsNetworkPayload thingsNetworkPayload) {
 
-        Device device = new Device(thingsNetworkPayload);
-        Optional<Device> deviceFound = deviceRepository.findById(device.getDeviceId());
-        if (deviceFound.isEmpty()) {
-            device = deviceRepository.save(device);
-        } else {
-            device = deviceFound.get();
+        try {
+            Device device = new Device(thingsNetworkPayload);
+            Optional<Device> deviceFound = deviceRepository.findById(device.getDeviceId());
+            if (deviceFound.isEmpty()) {
+                device = deviceRepository.save(device);
+            } else {
+                device = deviceFound.get();
+            }
+
+            Connection connection = new Connection(thingsNetworkPayload, device);
+            connection = connectionRepository.save(connection);
+
+            AirQuality airQuality = new AirQuality(thingsNetworkPayload, connection, device);
+            airQualityRepository.save(airQuality);
+        } catch (Exception e) {
+            Logger.getLogger(ThingsNetworkController.class.getName()).log(Level.WARNING, thingsNetworkPayload.toString(), e);
+            throw (e);
         }
-
-        Connection connection = new Connection(thingsNetworkPayload, device);
-        connection = connectionRepository.save(connection);
-
-        AirQuality airQuality = new AirQuality(thingsNetworkPayload, connection, device);
-        airQualityRepository.save(airQuality);
     }
 
     @GetMapping("/airQuality")
