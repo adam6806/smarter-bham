@@ -1,5 +1,7 @@
 package com.smarterbham.api.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smarterbham.api.dto.ThingsNetworkPayload;
 import com.smarterbham.api.model.AirQuality;
 import com.smarterbham.api.model.Connection;
@@ -29,9 +31,12 @@ public class ThingsNetworkController {
     }
 
     @PostMapping("/thingsNetworkPayload")
-    void newThingsNetworkPayload(@RequestBody ThingsNetworkPayload thingsNetworkPayload) {
+    void newThingsNetworkPayload(@RequestBody String thingsNetworkPayloadString) throws JsonProcessingException {
 
         try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            ThingsNetworkPayload thingsNetworkPayload = objectMapper.readValue(thingsNetworkPayloadString, ThingsNetworkPayload.class);
+
             Device device = new Device(thingsNetworkPayload);
             Optional<Device> deviceFound = deviceRepository.findById(device.getDeviceId());
             if (deviceFound.isEmpty()) {
@@ -46,7 +51,7 @@ public class ThingsNetworkController {
             AirQuality airQuality = new AirQuality(thingsNetworkPayload, connection, device);
             airQualityRepository.save(airQuality);
         } catch (Exception e) {
-            System.out.println(thingsNetworkPayload.toString());
+            System.out.println(thingsNetworkPayloadString);
             throw (e);
         }
     }
