@@ -13,8 +13,10 @@ import java.io.Serializable;
 public class Settings implements Serializable {
 
     public DataRate dataRate;
-    public Integer dataRateIndex;
     public String codingRate;
     public String frequency;
+    private final static long serialVersionUID = 6910320660131043171L;
+    public Integer timestamp;
+    public String time;
 
 }

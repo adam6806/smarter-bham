@@ -14,15 +14,10 @@ import java.util.List;
 @NoArgsConstructor
 public class UplinkMessage implements Serializable {
 
-    private String sessionKeyId;
-    private Integer fPort;
-    private Integer fCnt;
-    private String frmPayload;
-    private DecodedPayload decodedPayload;
-    private List<RxMetadatum> rxMetadata;
-    private Settings settings;
-    private Instant receivedAt;
-    private String consumedAirtime;
-    private NetworkIds networkIds;
+    private final static long serialVersionUID = -5916808818650619698L;
+    public DecodedPayload decodedPayload;
+    public List<RxMetadatum> rxMetadata = null;
+    public Settings settings;
+    public Instant receivedAt;
 
 }

@@ -12,18 +12,19 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class DecodedPayload implements Serializable {
 
-    private Integer ambientLight;
-    private Double battery;
-    private Integer celsius;
-    private Integer dewpoint;
-    private Integer ir;
-    private Integer particulate1;
-    private Integer particulate10;
-    private Integer particulate2dot5;
-    private Integer particulate4;
-    private Double pressure;
-    private Integer relativeHumidity;
-    private Integer uv;
-    private Integer voc;
+    private final static long serialVersionUID = -6643758045911795161L;
+    public Integer ambientLight;
+    public Double battery;
+    public Integer celsius;
+    public Integer dewpoint;
+    public Integer ir;
+    public Integer particulate1;
+    public Integer particulate10;
+    public Integer particulate2dot5;
+    public Integer particulate4;
+    public Double pressure;
+    public Integer relativeHumidity;
+    public Integer uv;
+    public Integer voc;
 
 }

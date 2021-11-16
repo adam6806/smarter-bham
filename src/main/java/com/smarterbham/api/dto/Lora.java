@@ -12,7 +12,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class Lora implements Serializable {
 
-    private Integer bandwidth;
-    private Integer spreadingFactor;
+    private final static long serialVersionUID = 1539168856776493281L;
+    public Integer bandwidth;
+    public Integer spreadingFactor;
 
 }

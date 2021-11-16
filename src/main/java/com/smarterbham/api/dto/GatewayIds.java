@@ -12,6 +12,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class GatewayIds implements Serializable {
 
-    private String gatewayId;
+    private final static long serialVersionUID = -3370193571104717745L;
+    public String gatewayId;
+    public String eui;
 
 }

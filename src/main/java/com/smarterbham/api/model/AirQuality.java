@@ -38,25 +38,27 @@ public class AirQuality implements Serializable {
     private Integer uv;
     private Integer voc;
     private Long connectionId;
+    private String deviceId;
 
     public AirQuality(ThingsNetworkPayload thingsNetworkPayload, Connection connection, Device device) {
 
+        deviceId = device.getDeviceId();
         connectionId = connection.getId();
-        receivedAt = thingsNetworkPayload.getReceivedAt();
+        receivedAt = thingsNetworkPayload.getData().getReceivedAt();
         latitude = device.getLatitude();
         longitude = device.getLongitude();
         altitude = device.getAltitude();
-        ambientLight = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getAmbientLight();
-        celsius = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getCelsius();
-        dewpoint = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getDewpoint();
-        ir = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getIr();
-        particulate1 = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getParticulate1();
-        particulate10 = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getParticulate10();
-        particulate2dot5 = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getParticulate2dot5();
-        particulate4 = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getParticulate4();
-        pressure = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getPressure();
-        relativeHumidity = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getRelativeHumidity();
-        uv = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getUv();
-        voc = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getVoc();
+        ambientLight = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getAmbientLight();
+        celsius = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getCelsius();
+        dewpoint = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getDewpoint();
+        ir = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getIr();
+        particulate1 = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getParticulate1();
+        particulate10 = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getParticulate10();
+        particulate2dot5 = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getParticulate2dot5();
+        particulate4 = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getParticulate4();
+        pressure = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getPressure();
+        relativeHumidity = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getRelativeHumidity();
+        uv = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getUv();
+        voc = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getVoc();
     }
 }

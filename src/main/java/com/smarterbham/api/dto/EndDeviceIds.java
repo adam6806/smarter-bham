@@ -12,10 +12,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class EndDeviceIds implements Serializable {
 
-    private String deviceId;
-    private ApplicationIds applicationIds;
-    private String devEui;
-    private String joinEui;
-    private String devAddr;
+    private final static long serialVersionUID = 5182496296974157333L;
+    public String deviceId;
+    public String devEui;
 
 }

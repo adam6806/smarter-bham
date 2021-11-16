@@ -6,20 +6,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class RxMetadatum implements Serializable {
 
-    private GatewayIds gatewayIds;
-    private PacketBroker packetBroker;
-    private Instant time;
-    private Integer rssi;
-    private Integer channelRssi;
-    private Double snr;
-    private Location location;
-    private String uplinkToken;
+    private final static long serialVersionUID = -8332398093512070497L;
+    public GatewayIds gatewayIds;
+    public String time;
+    public Integer timestamp;
+    public Integer rssi;
+    public Integer channelRssi;
+    public Double snr;
+    public Location location;
+    public String uplinkToken;
 
 }

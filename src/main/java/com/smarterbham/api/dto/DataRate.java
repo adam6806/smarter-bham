@@ -12,6 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class DataRate implements Serializable {
 
-    private Lora lora;
+    private final static long serialVersionUID = 4898521423137604625L;
+    public Lora lora;
 
 }

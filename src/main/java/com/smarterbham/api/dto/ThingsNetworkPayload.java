@@ -6,17 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
-import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class ThingsNetworkPayload implements Serializable {
 
-    private EndDeviceIds endDeviceIds;
-    private List<String> correlationIds;
-    private Instant receivedAt;
-    private UplinkMessage uplinkMessage;
+    private final static long serialVersionUID = 3639065172409837081L;
+    public String time;
+    public Data data;
 
 }
