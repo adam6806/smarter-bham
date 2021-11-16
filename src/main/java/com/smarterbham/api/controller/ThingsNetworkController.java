@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @RestController
 public class ThingsNetworkController {
@@ -48,7 +46,7 @@ public class ThingsNetworkController {
             AirQuality airQuality = new AirQuality(thingsNetworkPayload, connection, device);
             airQualityRepository.save(airQuality);
         } catch (Exception e) {
-            Logger.getLogger(ThingsNetworkController.class.getName()).log(Level.WARNING, thingsNetworkPayload.toString(), e);
+            System.out.println(thingsNetworkPayload);
             throw (e);
         }
     }
