@@ -46,7 +46,7 @@ public class ThingsNetworkController {
             AirQuality airQuality = new AirQuality(thingsNetworkPayload, connection, device);
             airQualityRepository.save(airQuality);
         } catch (Exception e) {
-            System.out.println(thingsNetworkPayload);
+            System.out.println(thingsNetworkPayload.toString());
             throw (e);
         }
     }

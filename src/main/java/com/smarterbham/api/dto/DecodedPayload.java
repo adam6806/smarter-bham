@@ -4,12 +4,14 @@ package com.smarterbham.api.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.io.Serializable;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class DecodedPayload implements Serializable {
 
     private final static long serialVersionUID = -6643758045911795161L;
