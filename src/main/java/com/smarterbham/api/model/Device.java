@@ -26,6 +26,6 @@ public class Device {
     private String description;
 
     public Device(ThingsNetworkPayload thingsNetworkPayload) {
-        deviceId = thingsNetworkPayload.getData().getEndDeviceIds().getDeviceId();
+        deviceId = thingsNetworkPayload.getEndDeviceIds().getDeviceId();
     }
 }

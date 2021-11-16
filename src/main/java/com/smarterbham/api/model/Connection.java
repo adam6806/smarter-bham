@@ -38,17 +38,17 @@ public class Connection implements Serializable {
     public Connection(ThingsNetworkPayload thingsNetworkPayload, Device device) {
 
         deviceId = device.getDeviceId();
-        receivedAt = thingsNetworkPayload.getData().getReceivedAt();
-        battery = thingsNetworkPayload.getData().getUplinkMessage().getDecodedPayload().getBattery();
-        gatewayLatitude = thingsNetworkPayload.getData().getUplinkMessage().getRxMetadata().get(0).getLocation().getLatitude();
-        gatewayLongitude = thingsNetworkPayload.getData().getUplinkMessage().getRxMetadata().get(0).getLocation().getLongitude();
-        gatewayAltitude = thingsNetworkPayload.getData().getUplinkMessage().getRxMetadata().get(0).getLocation().getAltitude();
-        codingRate = thingsNetworkPayload.getData().getUplinkMessage().getSettings().getCodingRate();
-        frequency = thingsNetworkPayload.getData().getUplinkMessage().getSettings().getFrequency();
-        rssi = thingsNetworkPayload.getData().getUplinkMessage().getRxMetadata().get(0).getRssi();
-        snr = thingsNetworkPayload.getData().getUplinkMessage().getRxMetadata().get(0).getSnr();
-        gatewayEui = thingsNetworkPayload.getData().getUplinkMessage().getRxMetadata().get(0).getGatewayIds().getEui();
-        bandwidth = thingsNetworkPayload.getData().getUplinkMessage().getSettings().getDataRate().getLora().getBandwidth();
-        spreadingFactor = thingsNetworkPayload.getData().getUplinkMessage().getSettings().getDataRate().getLora().getSpreadingFactor();
+        receivedAt = thingsNetworkPayload.getReceivedAt();
+        battery = thingsNetworkPayload.getUplinkMessage().getDecodedPayload().getBattery();
+        gatewayLatitude = thingsNetworkPayload.getUplinkMessage().getRxMetadata().get(0).getLocation().getLatitude();
+        gatewayLongitude = thingsNetworkPayload.getUplinkMessage().getRxMetadata().get(0).getLocation().getLongitude();
+        gatewayAltitude = thingsNetworkPayload.getUplinkMessage().getRxMetadata().get(0).getLocation().getAltitude();
+        codingRate = thingsNetworkPayload.getUplinkMessage().getSettings().getCodingRate();
+        frequency = thingsNetworkPayload.getUplinkMessage().getSettings().getFrequency();
+        rssi = thingsNetworkPayload.getUplinkMessage().getRxMetadata().get(0).getRssi();
+        snr = thingsNetworkPayload.getUplinkMessage().getRxMetadata().get(0).getSnr();
+        gatewayEui = thingsNetworkPayload.getUplinkMessage().getRxMetadata().get(0).getGatewayIds().getEui();
+        bandwidth = thingsNetworkPayload.getUplinkMessage().getSettings().getDataRate().getLora().getBandwidth();
+        spreadingFactor = thingsNetworkPayload.getUplinkMessage().getSettings().getDataRate().getLora().getSpreadingFactor();
     }
 }

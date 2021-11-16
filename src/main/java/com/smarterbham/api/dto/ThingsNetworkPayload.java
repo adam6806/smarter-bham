@@ -1,4 +1,3 @@
-
 package com.smarterbham.api.dto;
 
 import lombok.Getter;
@@ -7,6 +6,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.time.Instant;
+
 
 @Getter
 @Setter
@@ -14,8 +15,11 @@ import java.io.Serializable;
 @ToString
 public class ThingsNetworkPayload implements Serializable {
 
-    private final static long serialVersionUID = 3639065172409837081L;
-    public String time;
-    public Data data;
+    private final static long serialVersionUID = 7764733453704985227L;
+    public String type;
+    public EndDeviceIds endDeviceIds;
+    public Instant receivedAt;
+    public UplinkMessage uplinkMessage;
 
 }
+
