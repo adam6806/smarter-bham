@@ -14,8 +14,8 @@ import java.io.Serializable;
 @ToString
 public class Lora implements Serializable {
 
-    private final static long serialVersionUID = 1539168856776493281L;
-    public Integer bandwidth;
-    public Integer spreadingFactor;
+    private static final long serialVersionUID = 1539168856776493281L;
+    private Integer bandwidth;
+    private Integer spreadingFactor;
 
 }

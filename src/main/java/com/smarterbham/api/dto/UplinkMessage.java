@@ -16,10 +16,10 @@ import java.util.List;
 @ToString
 public class UplinkMessage implements Serializable {
 
-    private final static long serialVersionUID = -5916808818650619698L;
-    public DecodedPayload decodedPayload;
-    public List<RxMetadatum> rxMetadata = null;
-    public Settings settings;
-    public Instant receivedAt;
+    private static final long serialVersionUID = -5916808818650619698L;
+    private DecodedPayload decodedPayload;
+    private List<RxMetadatum> rxMetadata = null;
+    private Settings settings;
+    private Instant receivedAt;
 
 }

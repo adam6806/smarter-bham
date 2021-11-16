@@ -14,7 +14,7 @@ import java.io.Serializable;
 @ToString
 public class DataRate implements Serializable {
 
-    private final static long serialVersionUID = 4898521423137604625L;
-    public Lora lora;
+    private static final long serialVersionUID = 4898521423137604625L;
+    private Lora lora;
 
 }

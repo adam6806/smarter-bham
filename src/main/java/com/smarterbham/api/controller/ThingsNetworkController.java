@@ -29,7 +29,7 @@ public class ThingsNetworkController {
     }
 
     @PostMapping("/thingsNetworkPayload")
-    void newThingsNetworkPayload(@RequestBody ThingsNetworkPayload thingsNetworkPayload) {
+    public void newThingsNetworkPayload(@RequestBody ThingsNetworkPayload thingsNetworkPayload) {
 
         try {
             Device device = new Device(thingsNetworkPayload);
@@ -52,12 +52,12 @@ public class ThingsNetworkController {
     }
 
     @GetMapping("/airQuality")
-    List<AirQuality> getAirQuality() {
+    public List<AirQuality> getAirQuality() {
         return airQualityRepository.findTop50ByOrderByReceivedAtDesc();
     }
 
     @GetMapping("/connection")
-    List<Connection> getConnections() {
+    public List<Connection> getConnections() {
         return connectionRepository.findTop50ByOrderByReceivedAtDesc();
     }
 }

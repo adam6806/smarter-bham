@@ -14,8 +14,8 @@ import java.io.Serializable;
 @ToString
 public class EndDeviceIds implements Serializable {
 
-    private final static long serialVersionUID = 5182496296974157333L;
-    public String deviceId;
-    public String devEui;
+    private static final long serialVersionUID = 5182496296974157333L;
+    private String deviceId;
+    private String devEui;
 
 }

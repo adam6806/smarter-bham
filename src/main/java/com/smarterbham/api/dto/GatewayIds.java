@@ -14,8 +14,8 @@ import java.io.Serializable;
 @ToString
 public class GatewayIds implements Serializable {
 
-    private final static long serialVersionUID = -3370193571104717745L;
-    public String gatewayId;
-    public String eui;
+    private static final long serialVersionUID = -3370193571104717745L;
+    private String gatewayId;
+    private String eui;
 
 }

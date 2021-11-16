@@ -14,13 +14,13 @@ import java.io.Serializable;
 @ToString
 public class RxMetadatum implements Serializable {
 
-    private final static long serialVersionUID = -8332398093512070497L;
-    public GatewayIds gatewayIds;
-    public String time;
-    public Integer rssi;
-    public Integer channelRssi;
-    public Double snr;
-    public Location location;
-    public String uplinkToken;
+    private static final long serialVersionUID = -8332398093512070497L;
+    private GatewayIds gatewayIds;
+    private String time;
+    private Integer rssi;
+    private Integer channelRssi;
+    private Double snr;
+    private Location location;
+    private String uplinkToken;
 
 }

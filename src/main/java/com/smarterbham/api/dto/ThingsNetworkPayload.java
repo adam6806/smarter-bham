@@ -15,11 +15,11 @@ import java.time.Instant;
 @ToString
 public class ThingsNetworkPayload implements Serializable {
 
-    private final static long serialVersionUID = 7764733453704985227L;
-    public String type;
-    public EndDeviceIds endDeviceIds;
-    public Instant receivedAt;
-    public UplinkMessage uplinkMessage;
+    private static final long serialVersionUID = 7764733453704985227L;
+    private String type;
+    private EndDeviceIds endDeviceIds;
+    private Instant receivedAt;
+    private UplinkMessage uplinkMessage;
 
 }
 

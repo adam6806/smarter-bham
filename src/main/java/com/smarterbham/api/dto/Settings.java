@@ -14,10 +14,10 @@ import java.io.Serializable;
 @ToString
 public class Settings implements Serializable {
 
-    public DataRate dataRate;
-    public String codingRate;
-    public String frequency;
-    private final static long serialVersionUID = 6910320660131043171L;
-    public String time;
+    private static final long serialVersionUID = 6910320660131043171L;
+    private DataRate dataRate;
+    private String codingRate;
+    private String frequency;
+    private String time;
 
 }
